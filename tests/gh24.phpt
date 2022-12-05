@@ -27,14 +27,12 @@ content
 --MCBoundary=_12210121514003461--
 EML;
 
-$resource = mailparse_msg_create();
+$mail = mailparse_msg_create();
 
-$r = mailparse_msg_parse($resource, $data);
+mailparse_msg_parse($mail, $data);
 echo 'ok', PHP_EOL;
 
-var_dump($r);
-
-exit(0);
+mailparse_msg_free($mail);
 ?>
 --EXPECTF--
 ok
